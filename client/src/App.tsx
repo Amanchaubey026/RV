@@ -1,35 +1,103 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React from 'react'
+import { Button, MegaMenu, Navbar } from 'flowbite-react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="">
+      <MegaMenu>
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 md:space-x-8">
+          <Navbar.Brand href="/">
+            <img alt="" src="/favicon.svg" className="mr-3 h-6 sm:h-9" />
+            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+          </Navbar.Brand>
+          <div className="order-2 hidden items-center md:flex">
+            <a
+              href="#"
+              className="mr-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 md:mr-2 md:px-5 md:py-2.5"
+            >
+              Login
+            </a>
+            <Button href="#" className="bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300">
+              Sign up
+            </Button>
+          </div>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Navbar.Link href="#">Home</Navbar.Link>
+            <Navbar.Link>
+              <MegaMenu.Dropdown toggle={<>Company</>}>
+                <ul className="grid grid-cols-3">
+                  <div className="space-y-4 p-4">
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Library
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Resources
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Pro Version
+                      </a>
+                    </li>
+                  </div>
+                  <div className="space-y-4 p-4">
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Contact Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Support Center
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Terms
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Blog
+                      </a>
+                    </li>
+                  </div>
+                  <div className="space-y-4 p-4">
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Newsletter
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        Playground
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-primary-600 dark:hover:text-primary-500">
+                        License
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </MegaMenu.Dropdown>
+            </Navbar.Link>
+            <Navbar.Link href="#">Team</Navbar.Link>
+            <Navbar.Link href="#">Contact</Navbar.Link>
+          </Navbar.Collapse>
+        </div>
+      </MegaMenu>
+    </div>
+  );
+};
 
-export default App
+export default App;
