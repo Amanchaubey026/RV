@@ -26,7 +26,7 @@ export const About = () => {
               color={'black'}
               textAlign={'center'}
             >
-               User Authentication System
+               Hear Clearly Always
             </Heading>
           </Box>
           <Box>
@@ -34,7 +34,7 @@ export const About = () => {
               About This Project
             </Heading>
             <Text mt={4} color={'gray.600'}>
-              This project demonstrates a secure user authentication system with user registration, login functionalities, and adherence to industry standards. It ensures secure password storage, JWT-based authentication, and proper data validation to maintain data integrity.
+            Unlock the richness of sound with our state-of-the-art hearing aid. Designed for clarity, comfort, and reliability, it ensures you hear every detail, from conversations to music. With advanced technology and a sleek design, experience life with enhanced hearing, stay connected, and embrace every moment with confidence and ease
             </Text>
           </Box>
           <Box>
@@ -44,7 +44,7 @@ export const About = () => {
             <Flex mt={4} align={'center'}>
               <Avatar
                 size={'xl'}
-                src={'https://avatars.githubusercontent.com/u/98681520?v=4'}
+                src={'https://static-00.iconduck.com/assets.00/web-developer-illustration-503x512-mega3xxj.png'}
                 alt={'Developer'}
                 mr={4}
               />

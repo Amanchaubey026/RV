@@ -6,7 +6,6 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import video from '../assets/video.mp4';
 import { useNavigate } from 'react-router-dom';
 export default function Homepage() {
   const navigate = useNavigate();
@@ -37,15 +36,15 @@ export default function Homepage() {
                 zIndex: -1,
               }}
             >
-              Secure
+              RV
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              User Authentication System
+            Hear Clearly Always
             </Text>
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            A secure user authentication system with registration, login, and JWT generation. Use MongoDB for data storage, bcrypt for password hashing, and implement server-side data validation and input sanitization to prevent vulnerabilities like XSS and injection.
+          Rediscover the joy of sound with our cutting-edge hearing aid. Experience crystal-clear audio, comfort, and reliability. Empowering you to stay connected to the world around you, every moment matters.
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
@@ -73,7 +72,7 @@ export default function Homepage() {
           loop
           style={{ borderRadius: '15px', maxWidth: '600px', maxHeight: '400px' }}
         >
-          <source src={video} type="video/mp4" />
+          <source src={`https://media.istockphoto.com/id/1610176399/video/a-senior-man-with-hearing-aid-enjoys-the-fresh-air-in-winter.mp4?s=mp4-640x640-is&k=20&c=_U1dnzekzE0TNMI2LzQpIZbiNT-SXKtcbFFqgDzGB_o=`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Flex>

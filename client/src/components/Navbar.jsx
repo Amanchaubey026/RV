@@ -21,7 +21,7 @@ import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ProfileModal from "./miscellaneous/ProfileModal";
 import { useEffect, useState } from "react";
-
+import image from '../assets/Black_and_White_Minimalist_Professional_Initial_Logo-removebg-preview.png'
 const Links = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -133,7 +133,7 @@ export default function Navbar() {
               <RouterLink to="/">
                 <Image
                   w={16}
-                  src="https://wanderon.in/_next/image?url=https%3A%2F%2Fimages.wanderon.in%2Fthe-logo&w=1920&q=75"
+                  src={image}
                 />
               </RouterLink>
             </Box>

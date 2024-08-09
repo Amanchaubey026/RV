@@ -42,7 +42,7 @@ import {
           borderWidth={"1px"}
           alignItems={"center"}
         >
-          <Text>WanderOn</Text>
+          <Text>RV</Text>
         </Box>
         <Box
           bg={"white"}
