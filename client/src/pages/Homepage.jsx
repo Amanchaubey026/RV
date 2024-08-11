@@ -13,7 +13,7 @@ export default function Homepage() {
   const handleLoginClick = () => {
     navigate('/auth');
   };
-
+// mahalakshmi
   const handleSignUpClick = () => {
     navigate('/auth');
   };
