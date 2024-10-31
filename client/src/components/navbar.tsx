@@ -3,8 +3,10 @@ import React from 'react';
 import { FaUserAlt, FaBell } from 'react-icons/fa';
 import { Dropdown, Navbar } from 'flowbite-react';
 import { FaHandHoldingMedical } from "react-icons/fa";
+import { useAuth0 } from '@auth0/auth0-react';
 
 const MyNavbar: React.FC = () => {
+    const { loginWithRedirect ,isAuthenticated , logout} = useAuth0();
     return (
         <Navbar fluid className="bg-gray-700 px-4 py-2 shadow-lg">
             {/* Brand Section */}
@@ -19,10 +21,10 @@ const MyNavbar: React.FC = () => {
 
 
                 {/* Notification and Settings Icons */}
-                <button className="flex items-center text-white text-md hover:text-blue-300">
+                {!isAuthenticated &&  <button className="flex items-center text-white text-md hover:text-blue-300" onClick={()=>loginWithRedirect()}>
                     <FaBell className='mr-2'/>
                     Login
-                </button>
+                </button>}
                 {/* Dropdown Menu for Profile */}
                 <Dropdown
                     inline
@@ -33,7 +35,7 @@ const MyNavbar: React.FC = () => {
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item>
-                        <span>Logout</span>
+                        <span onClick={()=>logout()}>Logout</span>
                     </Dropdown.Item>
                 </Dropdown>
             </div>
@@ -43,9 +45,6 @@ const MyNavbar: React.FC = () => {
                 <Navbar.Link href="/" active>
                     Home
                 </Navbar.Link>
-                <Navbar.Link href="/about">About</Navbar.Link>
-                <Navbar.Link href="/services">Services</Navbar.Link>
-                <Navbar.Link href="/contact">Contact</Navbar.Link>
             </Navbar.Collapse>
         </Navbar>
     );
