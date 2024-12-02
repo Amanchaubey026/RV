@@ -39,7 +39,7 @@ const VibeTherapyTeam: React.FC = () => {
       <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
         {/* Header Section */}
         <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-12 text-center">
-          <h1 className="text-5xl font-bold mb-4">VibeTherapy Team</h1>
+          <h1 className="text-5xl font-bold mb-4">Revive Team</h1>
           <p className="text-2xl font-light">Innovating at the Intersection of Technology and Wellness</p>
         </header>
 
