@@ -34,6 +34,9 @@ const MyNavbar: React.FC = () => {
         <Link to="/team" className={`flex items-center no-underline ${getLinkClass('/team')}`}>
           Team
         </Link>
+        <Link to="/contact" className={`flex items-center no-underline ${getLinkClass('/contact')}`}>
+          Contact
+        </Link>
       </div>
 
       {/* Right Section (Icons and Authentication) */}
