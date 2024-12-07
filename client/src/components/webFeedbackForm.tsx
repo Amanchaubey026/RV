@@ -1,6 +1,4 @@
 import React, { useState, FormEvent } from 'react';
-import { Toaster, toast } from 'react-hot-toast';
-import { Mail, User, SendHorizontal } from 'lucide-react';
 
 export const FormWeb: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -10,7 +8,7 @@ export const FormWeb: React.FC = () => {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    formData.append('access_key', 'ac1557cd-c425-43d6-810b-a666e60781f5');
+    formData.append('access_key', 'ac1557cd-c425-43d6-810b-a666e60781f5'); // Replace with a valid key
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -18,34 +16,25 @@ export const FormWeb: React.FC = () => {
         body: formData,
       });
 
+      // Log HTTP errors if the response status is not OK
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        console.error('HTTP error:', response.status, response.statusText);
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       const data = await response.json();
+      console.log('API Response:', data);
 
       if (data.success) {
-        toast.success('Message sent successfully!', {
-          duration: 4000,
-          position: 'top-right',
-          style: {
-            background: '#22c55e',
-            color: 'white',
-            fontWeight: 'bold',
-          },
-        });
+        console.log('Message sent successfully!');
+        // You can add success handling here (e.g., reset the form)
         event.currentTarget.reset();
       } else {
-        toast.error('Failed to send message. Please try again.', {
-          duration: 4000,
-          position: 'top-right',
-        });
+        console.log('Failed to send message. Please try again.');
       }
     } catch (error) {
-      toast.error('Network error. Please check your connection.', {
-        duration: 4000,
-        position: 'top-right',
-      });
+      console.error('Network error or fetch failure:', error);
+      // Optionally, display error in UI (you can replace with a more user-friendly message)
     } finally {
       setIsSubmitting(false);
     }
@@ -53,7 +42,6 @@ export const FormWeb: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center px-4 py-12">
-      <Toaster />
       <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl p-8 space-y-6 border border-blue-100/50">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-blue-800 mb-2">Contact Us</h2>
@@ -62,10 +50,6 @@ export const FormWeb: React.FC = () => {
 
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="relative">
-            <User
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400"
-              size={20}
-            />
             <input
               type="text"
               name="name"
@@ -76,10 +60,6 @@ export const FormWeb: React.FC = () => {
           </div>
 
           <div className="relative">
-            <Mail
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400"
-              size={20}
-            />
             <input
               type="email"
               name="email"
@@ -104,7 +84,6 @@ export const FormWeb: React.FC = () => {
             disabled={isSubmitting}
             className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <SendHorizontal size={20} />
             <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
           </button>
         </form>
